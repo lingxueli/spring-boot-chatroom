@@ -4,8 +4,7 @@
 function login() {
     // TODO: complete the login function
     user = document.getElementById('username').value
-    console.log(user)
-    //location.replace('/index?username)
+    location.replace('/index?username=' + user)
 }
 
 /**
