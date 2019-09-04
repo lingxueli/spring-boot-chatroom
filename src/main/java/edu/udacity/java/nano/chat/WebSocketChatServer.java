@@ -21,6 +21,7 @@ public class WebSocketChatServer {
     /**
      * All chat sessions.
      */
+
     private static Map<String, Session> onlineSessions = new ConcurrentHashMap<>();
 
     private static void sendMessageToAll(String msg) {
@@ -33,6 +34,9 @@ public class WebSocketChatServer {
     @OnOpen
     public void onOpen(Session session) {
         //TODO: add on open connection.
+        String sessionId = session.getId();
+        onlineSessions.putIfAbsent(sessionId, session);
+
     }
 
     /**
