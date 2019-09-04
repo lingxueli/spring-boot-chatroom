@@ -3,6 +3,8 @@
 <head>
     <title>Chat Room Login</title>
     <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script src="js/custom.js"></script>
+
     <style>
         *, *:after, *:before {
             -webkit-box-sizing: border-box;
@@ -144,24 +146,6 @@
     </form>
 </div>
 
-<script>
-
-    /**
-     * Login
-     */
-    function login() {
-        location.href = '/index?username='+$('#username').val();
-    }
-
-    /**
-     * Enter to login.
-     */
-    document.onkeydown = function (event) {
-        var e = event || window.event || arguments.callee.caller.arguments[0];
-        e.keyCode === 13 && login();
-    };
-
-</script>
 
 
 </body>
