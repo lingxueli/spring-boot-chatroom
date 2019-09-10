@@ -18,7 +18,7 @@ public class Message {
         this.username = username;
     }
 
-    public void setMessage(String msg) {
+    public void setMsg(String msg) {
         this.msg = msg;
     }
 
@@ -36,7 +36,7 @@ public class Message {
         return username;
     }
 
-    public String getMessage() {
+    public String getMsg() {
         return msg;
     }
 

@@ -51,7 +51,7 @@ public class WebSocketChatServer {
         System.out.println(jsonStr);
 
         Message msg = JSON.parseObject(jsonStr, Message.class);
-        System.out.println(msg.getMessage());
+        System.out.println(msg.getMsg());
         System.out.println(msg.getUsername());
 
     }
