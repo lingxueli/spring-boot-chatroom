@@ -8,7 +8,7 @@ import java.sql.Struct;
 public class Message {
     // TODO: add message model.
     private String username;
-    private String message;
+    private String msg;
 /*
     private String type;
     private Struct onlineCount;
@@ -18,8 +18,8 @@ public class Message {
         this.username = username;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMessage(String msg) {
+        this.msg = msg;
     }
 
 /*
@@ -37,7 +37,7 @@ public class Message {
     }
 
     public String getMessage() {
-        return message;
+        return msg;
     }
 
 /*

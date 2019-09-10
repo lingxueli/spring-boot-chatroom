@@ -48,9 +48,12 @@ public class WebSocketChatServer {
     public void onMessage(Session session, String jsonStr) {
         //TODO: add send message.
         // jsonStr example: {"username":"lisa","msg":"hi"}
-        Message msg = JSON.parseObject(jsonStr, Message.class);
+        System.out.println(jsonStr);
 
+        Message msg = JSON.parseObject(jsonStr, Message.class);
         System.out.println(msg.getMessage());
+        System.out.println(msg.getUsername());
+
     }
 
     /**
