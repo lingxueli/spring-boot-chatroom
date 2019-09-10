@@ -9,8 +9,10 @@ public class Message {
     // TODO: add message model.
     private String username;
     private String message;
+/*
     private String type;
     private Struct onlineCount;
+*/
 
     public void setUsername(String username) {
         this.username = username;
@@ -20,6 +22,7 @@ public class Message {
         this.message = message;
     }
 
+/*
     public void setType(String type) {
         this.type = type;
     }
@@ -27,6 +30,7 @@ public class Message {
     public void setOnlineCount(Struct onlineCount) {
         this.onlineCount = onlineCount;
     }
+*/
 
     public String getUsername() {
         return username;
@@ -36,6 +40,7 @@ public class Message {
         return message;
     }
 
+/*
     public String getType() {
         return type;
     }
@@ -43,4 +48,5 @@ public class Message {
     public Struct getOnlineCount() {
         return onlineCount;
     }
+*/
 }

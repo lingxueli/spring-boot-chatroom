@@ -7,6 +7,8 @@ import javax.websocket.server.ServerEndpoint;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import com.alibaba.fastjson.JSON;
+
 /**
  * WebSocket Server
  *
@@ -45,6 +47,10 @@ public class WebSocketChatServer {
     @OnMessage
     public void onMessage(Session session, String jsonStr) {
         //TODO: add send message.
+        // jsonStr example: {"username":"lisa","msg":"hi"}
+        Message msg = JSON.parseObject(jsonStr, Message.class);
+
+        System.out.println(msg.getMessage());
     }
 
     /**
