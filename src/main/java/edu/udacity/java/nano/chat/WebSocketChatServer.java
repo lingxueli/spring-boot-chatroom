@@ -31,7 +31,7 @@ public class WebSocketChatServer {
         for(String id : onlineSessions.keySet()){
             Session curSession = onlineSessions.get(id);
             RemoteEndpoint.Async peer = curSession.getAsyncRemote();
-            peer.sendText(JSON.toJSONString(msg));
+            peer.sendText(msg);
         }
     }
 
@@ -54,8 +54,8 @@ public class WebSocketChatServer {
         //TODO: add send message.
         // jsonStr example: {"username":"lisa","msg":"hi"}
         Message msg = JSON.parseObject(jsonStr, Message.class);
-        String msgToSend = msg.getUsername() + ": " + msg.getMsg();
-        sendMessageToAll(msgToSend);
+        msg.setType("SPEAK");
+        sendMessageToAll(JSON.toJSONString(msg));
     }
 
     /**
