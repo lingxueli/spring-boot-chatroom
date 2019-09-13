@@ -67,10 +67,15 @@ public class WebSocketChatServer {
     @OnClose
     public void onClose(Session session) throws IOException {
         //TODO: add close connection.
+
+        // exclude closed session from the broadcast listeners
         onlineSessions.remove(session.getId());
 
+        // broadcast update number to listeners
         userNum--;
         updateUserCount(userNum);
+
+        // close the session
         session.close();
     }
 
