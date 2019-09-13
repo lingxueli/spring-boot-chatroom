@@ -28,6 +28,11 @@ public class WebSocketChatServer {
 
     private static void sendMessageToAll(String msg) {
         //TODO: add send message method.
+        for(String id : onlineSessions.keySet()){
+            Session curSession = onlineSessions.get(id);
+            RemoteEndpoint.Async peer = curSession.getAsyncRemote();
+            peer.sendText(JSON.toJSONString(msg));
+        }
     }
 
     /**
@@ -48,12 +53,8 @@ public class WebSocketChatServer {
     public void onMessage(Session session, String jsonStr) {
         //TODO: add send message.
         // jsonStr example: {"username":"lisa","msg":"hi"}
-        System.out.println(jsonStr);
-
         Message msg = JSON.parseObject(jsonStr, Message.class);
-        System.out.println(msg.getMsg());
-        System.out.println(msg.getUsername());
-
+        sendMessageToAll(msg.getUsername() + ": " + msg.getMsg());
     }
 
     /**
