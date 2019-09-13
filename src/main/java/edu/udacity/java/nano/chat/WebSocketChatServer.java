@@ -73,6 +73,7 @@ public class WebSocketChatServer {
         Message msg = new Message();
         msg.setOnlineCount(Integer.toString(userNum));
         sendMessageToAll(JSON.toJSONString(msg));
+        onlineSessions.remove(session.getId());
         session.close();
     }
 
