@@ -67,9 +67,10 @@ public class WebSocketChatServer {
     @OnClose
     public void onClose(Session session) throws IOException {
         //TODO: add close connection.
+        onlineSessions.remove(session.getId());
+
         userNum--;
         updateUserCount(userNum);
-        onlineSessions.remove(session.getId());
         session.close();
     }
 
