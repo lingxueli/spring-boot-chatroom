@@ -45,10 +45,8 @@ public class WebSocketChatServer {
         //TODO: add on open connection.
         String sessionId = session.getId();
         onlineSessions.putIfAbsent(sessionId, session);
-        userNum ++;
-        Message msg = new Message();
-        msg.setOnlineCount(Integer.toString(userNum));
-        sendMessageToAll(JSON.toJSONString(msg));
+        userNum++;
+        updateUserCount(userNum);
     }
 
     /**
@@ -70,9 +68,7 @@ public class WebSocketChatServer {
     public void onClose(Session session) throws IOException {
         //TODO: add close connection.
         userNum--;
-        Message msg = new Message();
-        msg.setOnlineCount(Integer.toString(userNum));
-        sendMessageToAll(JSON.toJSONString(msg));
+        updateUserCount(userNum);
         onlineSessions.remove(session.getId());
         session.close();
     }
@@ -83,6 +79,12 @@ public class WebSocketChatServer {
     @OnError
     public void onError(Session session, Throwable error) {
         error.printStackTrace();
+    }
+
+    private void updateUserCount(int userNum){
+        Message msg = new Message();
+        msg.setOnlineCount(Integer.toString(userNum));
+        sendMessageToAll(JSON.toJSONString(msg));
     }
 
 }
