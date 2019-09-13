@@ -25,6 +25,7 @@ public class WebSocketChatServer {
      */
 
     private static Map<String, Session> onlineSessions = new ConcurrentHashMap<>();
+    private static int userNum = 0;
 
     private static void sendMessageToAll(String msg) {
         //TODO: add send message method.
@@ -43,7 +44,7 @@ public class WebSocketChatServer {
         //TODO: add on open connection.
         String sessionId = session.getId();
         onlineSessions.putIfAbsent(sessionId, session);
-
+        userNum ++;
     }
 
     /**
@@ -55,6 +56,7 @@ public class WebSocketChatServer {
         // jsonStr example: {"username":"lisa","msg":"hi"}
         Message msg = JSON.parseObject(jsonStr, Message.class);
         msg.setType("SPEAK");
+        msg.setOnlineCount(Integer.toString(userNum));
         sendMessageToAll(JSON.toJSONString(msg));
     }
 
@@ -64,6 +66,7 @@ public class WebSocketChatServer {
     @OnClose
     public void onClose(Session session) {
         //TODO: add close connection.
+        userNum--;
     }
 
     /**

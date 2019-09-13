@@ -10,9 +10,8 @@ public class Message {
     private String username;
     private String msg;
     private String type;
-/*
-    private Struct onlineCount;
-*/
+    private String onlineCount;
+
     public void setUsername(String username) {
         this.username = username;
     }
@@ -21,15 +20,9 @@ public class Message {
         this.msg = msg;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
+    public void setType(String type) { this.type = type; }
 
-/*
-    public void setOnlineCount(Struct onlineCount) {
-        this.onlineCount = onlineCount;
-    }
-*/
+    public void setOnlineCount(String onlineCount) { this.onlineCount = onlineCount; }
 
     public String getUsername() {
         return username;
@@ -39,13 +32,8 @@ public class Message {
         return msg;
     }
 
-    public String getType() {
-        return type;
-    }
+    public String getType() { return type; }
 
-/*
-    public Struct getOnlineCount() {
-        return onlineCount;
-    }
-*/
+    public String getOnlineCount() { return onlineCount; }
+
 }
