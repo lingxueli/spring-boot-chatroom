@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
+import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -53,7 +54,6 @@ public class WebSocketChatServer {
     @OnMessage
     public void onMessage(Session session, String jsonStr) {
         //TODO: add send message.
-        // jsonStr example: {"username":"lisa","msg":"hi"}
         Message msg = JSON.parseObject(jsonStr, Message.class);
         msg.setType("SPEAK");
         msg.setOnlineCount(Integer.toString(userNum));
@@ -64,8 +64,9 @@ public class WebSocketChatServer {
      * Close connection, 1) remove session, 2) update user.
      */
     @OnClose
-    public void onClose(Session session) {
+    public void onClose(Session session) throws IOException {
         //TODO: add close connection.
+        session.close();
         userNum--;
     }
 
