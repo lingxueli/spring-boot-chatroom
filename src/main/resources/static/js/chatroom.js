@@ -64,15 +64,9 @@ var webSocket = getWebSocket();
  */
 function sendMsgToServer() {
     var $message = $('#msg');
-    console.log($('#msg').val());
 
     if ($message.val()) {
         webSocket.send(JSON.stringify({username: $('#username').text(), msg: $message.val()}));
-
-        console.log($('#username').text());
-        console.log($message.val());
-
-        await sleep(1000);
         $message.val(null);
     }
 }
