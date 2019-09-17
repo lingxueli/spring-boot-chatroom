@@ -5,13 +5,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.result.StatusResultMatchers;
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -28,6 +23,16 @@ public class WebSocketChatApplicationTest {
     public void login() throws Exception {
         this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk())
                 .andExpect(view().name("/login"));
+    }
+
+    @Test
+    public void join() throws Exception {
+        this.mockMvc.perform(get("/index?username=lisa")).andDo(print()).andExpect(status().isOk()).andExpect(view().name("/chat"));
+    }
+
+    @Test
+    public void chat() throws Exception {
+        this.mockMvc.perform("/chat").andDo()
     }
 
 }
