@@ -3,14 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="039f88ff-bdaa-4c36-bb1e-dace488f95cf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/WebSocketChatApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/WebSocketChatApplicationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/WebSocketChatApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/java/edu/udacity/java/nano/chat/WebSocketChatApplicationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/udacity/java/nano/WebSocketChatApplicationTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="15" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="chatroom-starter" />
@@ -49,6 +54,7 @@
       <recent name="edu.udacity.java.nano.chat" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lingx\OneDrive\Documents\JavaDeveloper\chatroom-starter\chatroom-starter\src\main\test\java\edu\udacity\java\nano\chat" />
       <recent name="C:\Users\lingx\OneDrive\Documents\JavaDeveloper\chatroom-starter\chatroom-starter\src\main\resources\static" />
       <recent name="C:\Users\lingx\OneDrive\Documents\JavaDeveloper\chatroom-starter\chatroom-starter\src\main\resources\static\img\js" />
     </key>
@@ -71,7 +77,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.WebSocketChatApplicationTest">
+    <configuration name="WebSocketChatApplicationTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chatroom-starter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.udacity.java.nano.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.udacity.java.nano" />
+      <option name="MAIN_CLASS_NAME" value="edu.udacity.java.nano.WebSocketChatApplicationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WebSocketChatApplicationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chatroom-starter" />
       <extension name="coverage">
@@ -87,9 +108,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WebSocketChatApplicationTest.login" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chatroom-starter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.udacity.java.nano.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.udacity.java.nano" />
+      <option name="MAIN_CLASS_NAME" value="edu.udacity.java.nano.WebSocketChatApplicationTest" />
+      <option name="METHOD_NAME" value="login" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.WebSocketChatApplicationTest" />
+        <item itemvalue="JUnit.WebSocketChatApplicationTest (1)" />
+        <item itemvalue="JUnit.WebSocketChatApplicationTest.login" />
       </list>
     </recent_temporary>
   </component>
@@ -120,7 +159,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/chatroom_starter$WebSocketChatApplicationTest.ic" NAME="WebSocketChatApplicationTest Coverage Results" MODIFIED="1568512294399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/chatroom_starter$WebSocketChatApplicationTest.ic" NAME="WebSocketChatApplicationTest Coverage Results" MODIFIED="1568684840486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.udacity.java.nano.*</FILTER>
     </SUITE>
   </component>
