@@ -27,12 +27,11 @@ public class WebSocketChatApplicationTest {
 
     @Test
     public void join() throws Exception {
-        this.mockMvc.perform(get("/index?username=lisa")).andDo(print()).andExpect(status().isOk()).andExpect(view().name("/chat"));
+        this.mockMvc.perform(get("/index").param("username", "Lisa")).andDo(print()).andExpect(status().isOk()).andExpect(view().name("/chat"));
     }
 
     @Test
     public void chat() throws Exception {
-        this.mockMvc.perform("/chat").andDo()
     }
 
 }
