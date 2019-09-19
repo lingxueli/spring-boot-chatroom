@@ -9,8 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest
@@ -18,6 +17,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class WebSocketChatApplicationTest {
     @Autowired
     private MockMvc mockMvc;
+
+    static final String WEBSOCKET_URI = "ws://localhost:8080/chat";
 
     @Test
     public void login() throws Exception {
@@ -27,11 +28,7 @@ public class WebSocketChatApplicationTest {
 
     @Test
     public void join() throws Exception {
-        this.mockMvc.perform(get("/index").param("username", "Lisa")).andDo(print()).andExpect(status().isOk()).andExpect(view().name("/chat"));
-    }
-
-    @Test
-    public void chat() throws Exception {
+        this.mockMvc.perform(get("/index").param("username", "Lisa")).andDo(print()).andExpect(status().isOk()).andExpect(view().name("/chat")).andExpect(model().	attribute("username","Lisa"));
     }
 
 }
